@@ -1,0 +1,73 @@
+{
+  "name": "edge-llm-proxy",
+  "version": "0.1.0",
+  "description": "Zero-config LLM proxy optimized for edge runtimes (Cloudflare Workers, Deno Deploy, Vercel Edge) with automatic caching, rate limiting, token management, and runtime-agnostic API",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./cloudflare": {
+      "import": "./dist/cloudflare.esm.js",
+      "require": "./dist/cloudflare.js",
+      "types": "./dist/cloudflare.d.ts"
+    },
+    "./deno": {
+      "import": "./dist/deno.esm.js",
+      "require": "./dist/deno.js",
+      "types": "./dist/deno.d.ts"
+    },
+    "./vercel": {
+      "import": "./dist/vercel.esm.js",
+      "require": "./dist/vercel.js",
+      "types": "./dist/vercel.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check",
+    "lint:fix": "biome check --write"
+  },
+  "keywords": [
+    "llm",
+    "proxy",
+    "edge",
+    "cloudflare-workers",
+    "deno-deploy",
+    "vercel-edge",
+    "ai",
+    "openai",
+    "anthropic",
+    "gemini"
+  ],
+  "author": "WorkBuddy Project",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workbuddy/edge-llm-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/workbuddy/edge-llm-proxy/issues"
+  },
+  "homepage": "https://github.com/workbuddy/edge-llm-proxy#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "vitest": "^5.1.1",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
